@@ -1,4 +1,4 @@
-## Delivery 01 - $(Game Title)
+## Delivery 02 - $(Game Title)
 
 ![$(Game Title)](Screenshots/screenshot01.png "$(Game Title)")
 
