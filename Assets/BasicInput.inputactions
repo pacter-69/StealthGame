@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "BasicInput",
     "maps": [
         {
@@ -22,6 +23,15 @@
                     "processors": "",
                     "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "4b7f6f8b-8304-4d9f-b0c7-56f029c59ece",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -90,17 +100,37 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a72d7908-b95d-4b44-829a-6865fc511a60",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "UI",
-            "id": "859790c2-e08b-4e07-b02e-cf592191654f",
+            "name": "Scenes",
+            "id": "db78149b-095f-445e-9a67-9d648ae9da4a",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "ChangeGameplay",
                     "type": "Button",
-                    "id": "3aab717e-ada1-46e7-8e55-d0b429b14d7b",
+                    "id": "fcc5a9d6-21e5-4665-ab12-63f364b0d5cf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Close",
+                    "type": "Button",
+                    "id": "ad97bffe-f84b-4c18-acbf-1c7d5a28dd65",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -110,12 +140,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f465dfa5-bda3-4532-9fd2-c86815b15335",
-                    "path": "",
+                    "id": "b0173050-fec1-426e-a43e-9e3811b5723c",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ChangeGameplay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3aaad993-0e70-40d4-a663-b69bcdac0540",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
