@@ -822,6 +822,7 @@ GameObject:
   - component: {fileID: 2108089968}
   - component: {fileID: 2108089969}
   - component: {fileID: 2108089970}
+  - component: {fileID: 2108089971}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Untagged
@@ -837,8 +838,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108089965}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.6938322, w: 0.7201367}
-  m_LocalPosition: {x: -2.41, y: 2.65, z: 0}
+  m_LocalRotation: {x: 0.021562936, y: -0.0005874082, z: -0.9997029, w: 0.011352564}
+  m_LocalPosition: {x: -1.92, y: 2.67, z: -0.026099041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -846,7 +847,7 @@ Transform:
   - {fileID: 567589345}
   - {fileID: 473472530}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.868}
+  m_LocalEulerAnglesHint: {x: -0.039, y: -2.472, z: -178.698}
 --- !u!50 &2108089969
 Rigidbody2D:
   serializedVersion: 5
@@ -920,6 +921,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2934601, y: 0.8822553}
   m_EdgeRadius: 0
+--- !u!114 &2108089971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108089965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cdd62a0d0b49f478c9fa93eee9ee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  EdgedetectionPoint: {fileID: 473472530}
+  WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 512
+  Speed: 2
+  direction: {x: 1, y: 0}
 --- !u!1001 &342510803676401598
 PrefabInstance:
   m_ObjectHideFlags: 0
