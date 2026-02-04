@@ -16,22 +16,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Move",
+                    "name": "MoveX",
                     "type": "Value",
                     "id": "3543051c-c5e5-48dc-92f3-22d394c8adb4",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press(pressPoint=1.401298E-45)",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "4b7f6f8b-8304-4d9f-b0c7-56f029c59ece",
-                    "expectedControlType": "",
+                    "name": "MoveY",
+                    "type": "Value",
+                    "id": "6bef92fc-b316-4caa-8b1e-5c74dcf61e72",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Press(pressPoint=1.401298E-45)",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -49,35 +49,13 @@
                 {
                     "name": "Arrows",
                     "id": "edb92e3a-af4a-43a9-b150-be35b60f363c",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveX",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Up",
-                    "id": "d39f7f7b-fbfd-49e5-b719-89411e94d548",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Down",
-                    "id": "2ae933c2-8e06-49ae-ad05-224adf8674e6",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "Left",
@@ -86,7 +64,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveX",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -97,42 +75,20 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveX",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "WASD",
                     "id": "8af12c95-68b6-4e29-9370-a75eb741c4da",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveX",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "6216f698-314d-4135-bc22-bbe61760c85f",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "93b540d1-b40c-433f-88df-c7730f4dc08d",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -141,7 +97,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveX",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -152,20 +108,75 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveX",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "a72d7908-b95d-4b44-829a-6865fc511a60",
-                    "path": "",
+                    "name": "Arrows",
+                    "id": "3516c374-dd57-41ba-9a1f-b2e0d17d11aa",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
+                    "action": "MoveY",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "c6da6e5d-6fcc-4b46-8321-320254fa7788",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "0a1476ff-74fd-4cda-9e1f-ac676549b948",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "WASD",
+                    "id": "ca6c5e01-ebbc-45e6-8764-218267c98bd5",
+                    "path": "2DVector(mode=1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveY",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "719bb4eb-0afe-4b4c-9865-d89d8784baae",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "90d1eedf-a8be-4234-b127-5522e653b63a",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
