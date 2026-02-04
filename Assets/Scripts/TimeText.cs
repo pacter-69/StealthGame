@@ -25,6 +25,6 @@ public class TimeText : MonoBehaviour
 
     private void UpdateTimeText(int tiempo)
     {
-        label.text = "TIEMPO: " + tiempo.ToString() + " segundos";
+        label.text = "tiempo: " + tiempo.ToString() + " seg.";
     }
 }

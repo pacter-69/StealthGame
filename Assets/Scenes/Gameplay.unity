@@ -617,7 +617,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Time: 00 sec.'
+  m_Text: 'Tiempo: 0 seg.'
 --- !u!222 &615651458
 CanvasRenderer:
   m_ObjectHideFlags: 0
