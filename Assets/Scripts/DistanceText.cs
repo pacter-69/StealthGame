@@ -6,24 +6,27 @@ using UnityEngine.UI;
 public class DistanceText : MonoBehaviour
 {
     private Text label;
+    public float distance;
 
     private void Awake()
     {
         label = GetComponent<Text>();
+        distance = 0;
     }
 
     private void OnDisable()
     {
-        DistanceManager.OnDistanceUpdated -= UpdateDistanceText;
+        PlayerDistanceTracker.OnMoveUnit -= UpdateDistanceText;
     }
 
     private void OnEnable()
     {
-        DistanceManager.OnDistanceUpdated += UpdateDistanceText;
+        PlayerDistanceTracker.OnMoveUnit += UpdateDistanceText;
     }
 
-    private void UpdateDistanceText(int distancia)
+    private void UpdateDistanceText(float distancia)
     {
-        label.text = "distancia: " + distancia.ToString() + "cm";
+        distance += distancia;
+        label.text = "distancia: " + (int)distance + "m";
     }
 }

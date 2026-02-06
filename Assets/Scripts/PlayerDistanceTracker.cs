@@ -5,6 +5,8 @@ public class PlayerDistanceTracker : MonoBehaviour
 {
     public static event Action<float> OnMoveUnit;
     private float prevPositionX, prevPositionY;
+    private float distanceX, distanceY;
+    private float counter;
 
     void Start()
     {
@@ -14,16 +16,22 @@ public class PlayerDistanceTracker : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x != prevPositionX)
-        {
-            prevPositionX = transform.position.x;
-            OnMoveUnit?.Invoke(Mathf.Abs(transform.position.x - prevPositionX));
-        }
+        counter += Time.deltaTime;
 
-        if (transform.position.y != prevPositionY)
+        distanceX += Mathf.Abs(transform.position.x - prevPositionX);
+        prevPositionX = transform.position.x;
+
+        distanceY += Mathf.Abs(transform.position.y - prevPositionY);
+        prevPositionY = transform.position.y;
+
+        if (counter >= 0.1f)
         {
-            prevPositionY = transform.position.y;
-            OnMoveUnit?.Invoke(Mathf.Abs(transform.position.y - prevPositionY));
+            OnMoveUnit?.Invoke(distanceX);
+            OnMoveUnit?.Invoke(distanceY);
+            distanceX = 0;
+            distanceY = 0;
+
+            counter = 0;
         }
     }
 }

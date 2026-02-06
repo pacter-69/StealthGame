@@ -212,12 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff70034bfab0b84bb4f48a0012593b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistanceText
---- !u!1 &137210631 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 52584532751077343, guid: b2d82316fa4567041958a46d441d5db7,
-    type: 3}
-  m_PrefabInstance: {fileID: 342510803676401598}
-  m_PrefabAsset: {fileID: 0}
+  distance: 0
 --- !u!1 &473472529
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,18 +838,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 342510803676401598}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1701691624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137210631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0cfbed7e686d26439afd7c93d7f2bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &2084087561
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +849,6 @@ GameObject:
   - component: {fileID: 2084087566}
   - component: {fileID: 2084087565}
   - component: {fileID: 2084087564}
-  - component: {fileID: 2084087563}
   - component: {fileID: 2084087562}
   m_Layer: 0
   m_Name: UIManager
@@ -887,20 +869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5ecfab58808884d95abc11fa4db97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cronometro
---- !u!114 &2084087563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084087561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a66a80afdb60e41be8ba54c0b3f871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DistanceManager
-  distancia: 0
-  aentrado: 0
 --- !u!114 &2084087564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,11 +1105,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 52584532751077343, guid: b2d82316fa4567041958a46d441d5db7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1701691624}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d82316fa4567041958a46d441d5db7, type: 3}
 --- !u!1001 &445789979621339445
 PrefabInstance:
