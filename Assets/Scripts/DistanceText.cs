@@ -25,6 +25,6 @@ public class DistanceText : MonoBehaviour
 
     private void UpdateDistanceText(int distancia)
     {
-        label.text = "distancia: " + distancia.ToString() + "m";
+        label.text = "distancia: " + distancia.ToString() + "cm";
     }
 }
