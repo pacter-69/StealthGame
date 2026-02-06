@@ -10,7 +10,6 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D _rigidbody;
     private float _horizontalDir, _verticalDir;
-    public static event Action<float> OnMoveUnit;
 
     void Start()
     {
@@ -21,19 +20,6 @@ public class PlayerMove : MonoBehaviour
     {
         Vector2 velocity = _rigidbody.linearVelocity;
         _rigidbody.linearVelocity = new Vector2(_horizontalDir, _verticalDir).normalized * speed;
-        if (_horizontalDir != 0) {
-            if (_horizontalDir < 0)
-                OnMoveUnit?.Invoke(_horizontalDir * (-1));
-            else
-                OnMoveUnit?.Invoke(_horizontalDir);
-        }
-
-        if (_verticalDir != 0) { 
-        if (_verticalDir < 0)
-            OnMoveUnit?.Invoke(_verticalDir * (-1));
-        else 
-                OnMoveUnit?.Invoke(_verticalDir);
-        }
     }
 
     void OnMoveX(InputValue value)

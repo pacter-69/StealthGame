@@ -19,13 +19,13 @@ public class DistanceManager : MonoBehaviour
     private void OnDisable()
     {
         aentrado = true;
-        PlayerMove.OnMoveUnit -= UpdateDistance;
+        PlayerDistanceTracker.OnMoveUnit -= UpdateDistance;
     }
 
     private void OnEnable()
     {
         aentrado = true;
-        PlayerMove.OnMoveUnit += UpdateDistance;
+        PlayerDistanceTracker.OnMoveUnit += UpdateDistance;
     }
 
     private void UpdateDistance(float unidad)

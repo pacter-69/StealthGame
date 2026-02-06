@@ -212,6 +212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff70034bfab0b84bb4f48a0012593b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistanceText
+--- !u!1 &137210631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 52584532751077343, guid: b2d82316fa4567041958a46d441d5db7,
+    type: 3}
+  m_PrefabInstance: {fileID: 342510803676401598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &473472529
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +843,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 342510803676401598}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1701691624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137210631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cfbed7e686d26439afd7c93d7f2bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &2084087561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1087,7 @@ PrefabInstance:
     - target: {fileID: 1815625421767485780, guid: b2d82316fa4567041958a46d441d5db7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.68
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1815625421767485780, guid: b2d82316fa4567041958a46d441d5db7,
         type: 3}
@@ -1119,7 +1137,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 52584532751077343, guid: b2d82316fa4567041958a46d441d5db7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1701691624}
   m_SourcePrefab: {fileID: 100100000, guid: b2d82316fa4567041958a46d441d5db7, type: 3}
 --- !u!1001 &445789979621339445
 PrefabInstance:
