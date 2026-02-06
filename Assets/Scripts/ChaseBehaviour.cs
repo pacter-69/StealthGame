@@ -1,36 +1,33 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class ChaseBehaviour : StateMachineBehaviour
+public class ChaseBehaviour : MonoBehaviour
 {
-    public float Speed = 2;
-    public float VisionRange;
+    [SerializeField]
+    private float distance;
+
+    public float speed = 2;
+    public float visionRange;
+    public bool isPlayerClose { get; private set; }
 
     private Transform player;
 
-    // OnStateEnter is called when a transition starts and
-    // the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    // OnStateUpdate is called on each Update frame between
-    // OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        // Check triggers
-        var playerClose = IsPlayerClose(animator.transform);
-        animator.SetBool("IsChasing", playerClose);
-
-        // Move to player
-        Vector2 dir = player.position - animator.transform.position;
-        animator.transform.position += (Vector3)dir.normalized * Speed * Time.deltaTime;
+        isPlayerClose = IsPlayerClose(transform);
     }
 
     private bool IsPlayerClose(Transform transform)
     {
         var dist = Vector3.Distance(transform.position, player.position);
+        distance = dist;
+        return (dist < visionRange);
+    }
 
-        return (dist < VisionRange);
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, visionRange);
     }
 }

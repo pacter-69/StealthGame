@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2964682830665690729}
   - component: {fileID: 1892943750984406621}
   - component: {fileID: 9064273919618734252}
+  - component: {fileID: 7690983820701665670}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267569582029700575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.021562936, y: -0.0005874082, z: -0.9997029, w: 0.011352564}
+  m_LocalRotation: {x: 0.02156542, y: -0.00058541005, z: -0.9997029, w: 0.011351937}
   m_LocalPosition: {x: -2.64, y: 2.67, z: -0.026099041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -109,6 +110,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2934601, y: 0.8822553}
   m_EdgeRadius: 0
+--- !u!114 &7690983820701665670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267569582029700575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7130b36134c5e84aa80baf53c04af12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
+  distance: 0
+  speed: 2
+  visionRange: 5
 --- !u!1 &2523524360773735383
 GameObject:
   m_ObjectHideFlags: 0
