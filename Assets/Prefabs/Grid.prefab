@@ -5222,9 +5222,9 @@ GameObject:
   - component: {fileID: 5756948809667574868}
   - component: {fileID: 3212221232636541325}
   - component: {fileID: 5627881463933743252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Props
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
