@@ -25,9 +25,10 @@ _TODO: Show your game to the world, animated GIFs recommended!._
 
 ### Developers
 
- - $(Developer 01) - $(Role/Tasks Developed)
- - $(Developer 02) - $(Role/Tasks Developed)
- - $(Developer 03) - $(Role/Tasks Developed)
+ - $(Aleix Domenech) - $(Role/Tasks Developed)
+ - $(Raúl Romero) - $(Role/Tasks Developed)
+ - $(Pol Anguita) - $(Role/Tasks Developed)
+ - $(Oriol Mafre) - $(Role/Tasks Developed)
 
 ### Links
 
@@ -41,4 +42,4 @@ This game sources are licensed under MIT license. Check [LICENSE](LICENSE) for f
 
 $(Additional Licenses)
 
-*Copyright (c) $(Year) $(Developers Names)*
+*Copyright (c) $(2026) $(Developers Names)*
