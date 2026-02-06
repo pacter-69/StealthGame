@@ -223,9 +223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleBehaviour
   StayTime: 2
   VisionRange: 4
-  WhatIsVisionBlock:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1102 &6328056070711634177
 AnimatorState:
   serializedVersion: 6
