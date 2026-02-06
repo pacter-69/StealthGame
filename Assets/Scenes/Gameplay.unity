@@ -876,7 +876,6 @@ GameObject:
   - component: {fileID: 2108089968}
   - component: {fileID: 2108089969}
   - component: {fileID: 2108089970}
-  - component: {fileID: 2108089971}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Untagged
@@ -975,24 +974,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2934601, y: 0.8822553}
   m_EdgeRadius: 0
---- !u!114 &2108089971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108089965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9cdd62a0d0b49f478c9fa93eee9ee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  WallDetectionPoint: {fileID: 473472530}
-  WhatIsWall:
-    m_Bits: 512
-  Speed: 2
-  CheckDistance: 0.3
-  rb: {fileID: 0}
 --- !u!1001 &342510803676401598
 PrefabInstance:
   m_ObjectHideFlags: 0
