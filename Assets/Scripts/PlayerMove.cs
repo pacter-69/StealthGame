@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D _rigidbody;
     private float _horizontalDir, _verticalDir;
+    public static event Action<int> OnMoveUnit;
 
     void Start()
     {
@@ -24,11 +27,15 @@ public class PlayerMove : MonoBehaviour
     {
         var inputVal = value.Get<Vector2>();
         _horizontalDir = inputVal.x;
+        OnMoveUnit?.Invoke(((int)(_horizontalDir)));
+        
     }
 
     void OnMoveY(InputValue value)
     {
         var inputVal = value.Get<Vector2>();
         _verticalDir = inputVal.y;
+        OnMoveUnit?.Invoke(((int)(_horizontalDir)));
+
     }
 }
