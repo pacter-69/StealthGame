@@ -1,36 +1,40 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyPatrol : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public Transform EdgedetectionPoint;
-    public LayerMask WhatIsWall;
-    public float Speed;
+    public Transform WallDetectionPoint;   // Punto delante del zombi
+    public LayerMask WhatIsWall;           // Tu layer "Walls"
+    public float Speed = 2f;
+    public float CheckDistance = 0.3f;
 
-    public Vector2 direction = Vector2.right;
-    void Update()
+    private Rigidbody2D rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
     {
         Move();
 
-        if (EdgeDetected()) Flip();
+        if (WallDetected())
+            Flip();
     }
 
     private void Move()
     {
-        transform.Translate(direction * Speed * Time.deltaTime, Space.World);
+        rb.linearVelocity = new Vector2(transform.right.x * Speed, rb.linearVelocity.y);
     }
 
-    private bool EdgeDetected()
+    private bool WallDetected()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.5f, WhatIsWall);
-
-        return (hit.collider == null);
+        RaycastHit2D hit = Physics2D.Raycast(WallDetectionPoint.position, transform.right, CheckDistance, WhatIsWall);
+        return hit.collider != null; // si HAY pared/obstáculo -> flip
     }
 
     private void Flip()
     {
-        direction = -direction;
-        transform.Rotate(0f, 180f, 0f);
+        transform.Rotate(0, 180, 0);
     }
-
 }
