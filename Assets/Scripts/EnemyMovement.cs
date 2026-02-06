@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public Transform WallDetectionPoint;   // Punto delante del zombi
-    public LayerMask WhatIsWall;           // Tu layer "Walls"
+    public Transform WallDetectionPoint; 
+    public LayerMask WhatIsWall;          
     public float Speed = 2f;
     public float CheckDistance = 0.3f;
 
@@ -30,7 +30,7 @@ public class EnemyPatrol : MonoBehaviour
     private bool WallDetected()
     {
         RaycastHit2D hit = Physics2D.Raycast(WallDetectionPoint.position, transform.right, CheckDistance, WhatIsWall);
-        return hit.collider != null; // si HAY pared/obstáculo -> flip
+        return hit.collider != null;
     }
 
     private void Flip()
