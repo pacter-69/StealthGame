@@ -28,7 +28,7 @@ _TODO: Show your game to the world, animated GIFs recommended!._
  - $(Aleix Domenech) - $(Role/Tasks Developed)
  - $(Raúl Romero) - $(Role/Tasks Developed)
  - $(Pol Anguita) - $(Role/Tasks Developed)
- - $(Oriol Mafre) - $(Role/Tasks Developed)
+ - $(Oriol Mallafré) - $(Role/Tasks Developed)
 
 ### Links
 
