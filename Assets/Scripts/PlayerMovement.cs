@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving;
 
     private int score = 2000;
+    public static event Action <int> OnMoveUnit;
 
     public bool IsMoving => isMoving;
 
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         // Read value from control, the type depends on what
         // type of controls the action is bound to
         var moveDir = value.Get<Vector2>();
-
+        OnMoveUnit?.Invoke((1));
         Vector2 velocity = moveDir * Speed;
         rb.linearVelocity = velocity;
     }
