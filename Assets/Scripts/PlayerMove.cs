@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D _rigidbody;
     private float _horizontalDir, _verticalDir;
+    public static event Action<float> OnMoveUnit;
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class PlayerMove : MonoBehaviour
     {
         Vector2 velocity = _rigidbody.linearVelocity;
         _rigidbody.linearVelocity = new Vector2(_horizontalDir, _verticalDir).normalized * speed;
+        if(_horizontalDir!=0|| _verticalDir!=0)
+            OnMoveUnit?.Invoke((Time.deltaTime));
     }
 
     void OnMoveX(InputValue value)
