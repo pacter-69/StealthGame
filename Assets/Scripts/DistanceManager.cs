@@ -7,7 +7,7 @@ using UnityEngine.UI;
  
 public class DistanceManager : MonoBehaviour
 {
-   public int distancia;
+   public float distancia;
     public Boolean aentrado=false;
    public static event Action<int> OnDistanceUpdated;
 
@@ -28,7 +28,7 @@ public class DistanceManager : MonoBehaviour
         PlayerMove.OnMoveUnit += UpdateDistance;
     }
 
-    private void UpdateDistance(int unidad)
+    private void UpdateDistance(float unidad)
     {
     distancia+=unidad;
     OnDistanceUpdated?.Invoke(((int)distancia));
