@@ -2,62 +2,72 @@ using UnityEngine;
 
 public class IdleBehaviour : StateMachineBehaviour
 {
-    public float StayTime;
-    public float VisionRange;
+    public float stayTime;
+    public float visionRange;
+    public float visionAngle;
 
     private float timer;
     private Transform player;
 
-    // OnStateEnter is called when a transition starts and
-    // the state machine starts to evaluate this state
+    [SerializeField]
+    private bool playerClose;
+    [SerializeField]
+    private bool playerOnAngle;
+    [SerializeField]
+    private bool playerAvaliable;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer = 0.0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // OnStateUpdate is called on each Update frame between
-    // OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Check triggers
-        var playerClose = IsPlayerClose(animator.transform);
+        playerClose = IsPlayerClose(animator.transform);
+
+        if (playerClose)
+        {
+            playerOnAngle = IsPlayerOnAngle(animator.transform);
+
+            if (playerOnAngle)
+            {
+                playerAvaliable = IsPlayerAvaliable(animator.transform);
+            }
+        }
+
         var timeUp = IsTimeUp();
 
-        animator.SetBool("IsChasing", playerClose);
+        animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
         animator.SetBool("IsPatroling", timeUp);
+
+        // Move
+        //animator.transform.position = Vector2.Lerp(startPos, targetPos, timer / stayTime);
     }
-
-    // OnStateExit is called when a transition ends and
-    // the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 
     private bool IsTimeUp()
     {
         timer += Time.deltaTime;
-
-        return (timer > StayTime);
+        return (timer > stayTime);
     }
 
     private bool IsPlayerClose(Transform transform)
     {
         var dist = Vector3.Distance(transform.position, player.position);
+        return (dist < visionRange);
+    }
 
-        return (dist < VisionRange);
+    private bool IsPlayerOnAngle(Transform transform)
+    {
+        return Vector2.Angle(transform.right, player.position - transform.position) < visionAngle;
+    }
+
+    private bool IsPlayerAvaliable(Transform transform)
+    {
+        Vector2 vectorToPlayer = player.position - transform.position;
+        GameObject playerHit = Physics2D.Raycast(transform.position, vectorToPlayer).collider.gameObject;
+        Debug.Log(playerHit.name);
+        return playerHit.CompareTag("Player");
     }
 }

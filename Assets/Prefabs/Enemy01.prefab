@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 2964682830665690729}
   - component: {fileID: 1892943750984406621}
   - component: {fileID: 9064273919618734252}
-  m_Layer: 0
+  - component: {fileID: 6279012902051936232}
+  - component: {fileID: 2014618784930173735}
+  m_Layer: 6
   m_Name: Enemy01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +64,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &9064273919618734252
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,6 +111,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2934601, y: 0.8822553}
   m_EdgeRadius: 0
+--- !u!95 &6279012902051936232
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267569582029700575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad6a12bc0d73ae94a8bbd96b5e6a6ece, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2014618784930173735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267569582029700575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d8651717e56e949801768444cc924f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  visionRange: 4
+  visionAngle: 20
 --- !u!1 &2523524360773735383
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +158,7 @@ GameObject:
   - component: {fileID: 7124893498094360892}
   - component: {fileID: 2957576521581476592}
   - component: {fileID: 5424256051626383886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997533071399557910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallDetectionPoint
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -255,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6450802422522681860}
   - component: {fileID: 5143837477892705527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class PatrolBehaviour : StateMachineBehaviour
 {
-    public float StayTime;
-    public float VisionRange;
+    public float stayTime;
+    public float visionRange;
+    public float visionAngle;
 
     private float timer;
     private Transform player;
     private Vector2 targetPos;
     private Vector2 startPos;
+
+    [SerializeField]
+    private bool playerClose;
+    [SerializeField]
+    private bool playerOnAngle;
+    [SerializeField]
+    private bool playerAvaliable;
 
     // OnStateEnter is called when a transition starts and
     // the state machine starts to evaluate this state
@@ -17,8 +25,8 @@ public class PatrolBehaviour : StateMachineBehaviour
         timer = 0.0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        startPos = new Vector2(animator.transform.position.x, animator.transform.position.y);
-        targetPos = new Vector2(startPos.x + Random.Range(-1.0f, 1.0f) * 4, startPos.y + Random.Range(-1.0f, 1.0f) * 4);
+        //startPos = new Vector2(animator.transform.position.x, animator.transform.position.y);
+        //targetPos = new Vector2(startPos.x + Random.Range(-1.0f, 1.0f) * 4, startPos.y + Random.Range(-1.0f, 1.0f) * 4);
     }
 
     // OnStateUpdate is called on each Update frame between
@@ -26,25 +34,48 @@ public class PatrolBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Check triggers
-        var playerClose = IsPlayerClose(animator.transform);
+        playerClose = IsPlayerClose(animator.transform);
+
+        if (playerClose)
+        {
+            playerOnAngle = IsPlayerOnAngle(animator.transform);
+
+            if (playerOnAngle)
+            {
+                playerAvaliable = IsPlayerAvaliable(animator.transform);
+            }
+        }
+
         var timeUp = IsTimeUp();
 
-        animator.SetBool("IsChasing", playerClose);
+        animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
         animator.SetBool("IsPatroling", !timeUp);
 
         // Move
-        animator.transform.position = Vector2.Lerp(startPos, targetPos, timer / StayTime);
+        //animator.transform.position = Vector2.Lerp(startPos, targetPos, timer / stayTime);
     }
 
     private bool IsTimeUp()
     {
         timer += Time.deltaTime;
-        return (timer > StayTime);
+        return (timer > stayTime);
     }
 
     private bool IsPlayerClose(Transform transform)
     {
         var dist = Vector3.Distance(transform.position, player.position);
-        return (dist < VisionRange);
+        return (dist < visionRange);
+    }
+
+    private bool IsPlayerOnAngle(Transform transform)
+    {
+        return Vector2.Angle(transform.right, player.position - transform.position) < visionAngle;
+    }
+
+    private bool IsPlayerAvaliable(Transform transform)
+    {
+        Vector2 vectorToPlayer = player.position - transform.position;
+        string playerHit = Physics2D.Raycast(transform.position, vectorToPlayer, vectorToPlayer.magnitude).collider.gameObject.tag;
+        return playerHit.Equals("Player");
     }
 }

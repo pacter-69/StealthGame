@@ -65,7 +65,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6553723005803624788}
-    m_Position: {x: 260, y: 0, z: 0}
+    m_Position: {x: 260, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2214517847836651799}
     m_Position: {x: 420, y: 130, z: 0}
@@ -231,8 +231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9815b42c000354ba6ccfcf4e9e619b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolBehaviour
-  StayTime: 3
-  VisionRange: 4
+  stayTime: 0
+  visionRange: 4
+  visionAngle: 20
+  playerClose: 0
+  playerOnAngle: 0
+  playerAvaliable: 0
 --- !u!114 &5100470708033797149
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,8 +249,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085792c6b3477074883d8ce178080629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IdleBehaviour
-  StayTime: 2
-  VisionRange: 4
+  stayTime: 0
+  visionRange: 4
+  visionAngle: 20
+  playerClose: 0
+  playerOnAngle: 0
+  playerAvaliable: 0
 --- !u!1102 &6328056070711634177
 AnimatorState:
   serializedVersion: 6

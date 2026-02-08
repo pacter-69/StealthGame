@@ -30,7 +30,6 @@ public class ChaseBehaviour : StateMachineBehaviour
     private bool IsPlayerClose(Transform transform)
     {
         var dist = Vector3.Distance(transform.position, player.position);
-
         return (dist < VisionRange);
     }
 }
