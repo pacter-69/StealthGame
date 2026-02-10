@@ -40,7 +40,7 @@ _TODO: Show your game to the world, animated GIFs recommended!._
  - Pol Anguita – Programmer  
    (High score, move enemies and state machine)
 
- - Oriol Mallafre – Tester  
+ - Oriol Mallafre – Tester & Programmer 
    (move enemies, high score, change escenary to ending, bug detection and error reporting to the development team)
 
 ### License

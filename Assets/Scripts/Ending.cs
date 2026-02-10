@@ -3,19 +3,51 @@ using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
-    public void OnCollisionEnter2D(Collision2D collision)
+    public TimeText timeText;
+
+    private void GuardarDatos()
+    {
+        int tiempo = 0;
+
+        if (timeText != null)
+        {
+            tiempo = timeText.currentTime;
+        }
+
+        PlayerPrefs.SetInt("LastTime", tiempo);
+
+        int mejorTiempo = PlayerPrefs.GetInt("BestTime", 999999);
+
+        if (tiempo < mejorTiempo)
+        {
+            PlayerPrefs.SetInt("BestTime", tiempo);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    private void CargarFinal()
+    {
+        GuardarDatos();
+        SceneManager.LoadScene("Ending");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Finish"))
-        {
-            SceneManager.LoadScene("Ending");
-        }
+            CargarFinal();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Finish"))
-        {
-            SceneManager.LoadScene("Ending");
-        }
+            CargarFinal();
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey("BestTime");
+        PlayerPrefs.DeleteKey("LastTime");
+        PlayerPrefs.Save();
     }
 }
