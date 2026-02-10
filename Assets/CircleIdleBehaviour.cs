@@ -6,12 +6,12 @@ public class CircleIdleBehaviour : StateMachineBehaviour
     public float visionRange;
     public float visionAngle;
 
-    public float angleToRotate;
     public float rotateDuration;
 
     private Quaternion startRotation, targetRotation;
 
     private float timer;
+    public float angle;
     private Transform player;
 
     [SerializeField]
@@ -27,7 +27,7 @@ public class CircleIdleBehaviour : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         startRotation = animator.transform.rotation;
-        targetRotation = startRotation * Quaternion.Euler(0, 0, -180f);
+        targetRotation = startRotation * Quaternion.Euler(0, 0, -angle);
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -50,8 +50,8 @@ public class CircleIdleBehaviour : StateMachineBehaviour
 
         var timeUp = IsTimeUp();
 
-        animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
-        animator.SetBool("IsPatroling", timeUp);
+        animator.SetBool("isChasing", playerClose && playerOnAngle && playerAvaliable);
+        animator.SetBool("isPatroling", timeUp);
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
