@@ -1,23 +1,29 @@
-## Delivery 02 - $(Game Title)
-
-![$(Game Title)](Screenshots/screenshot01.png "$(Game Title)")
+## Delivery 02 - 2D Stealth Game
 
 ### Description
 
-$(Your Game Description)
+Test on how to make a 2D stealth game designed to program Timer,high score,distance counter, state machine, move an enemy in Top down scenes, player detection and player chase.
 
 ### Features
 
- - $(Game Feature 01)
- - $(Game Feature 02)
- - $(Game Feature 03)
+ - Timer
+ - High score
+ - distance counter
+ - state machine
+ - move enemies
+ - player detection
+ - player chase
+
 
 ### Controls
 
 Keyboard:
- - $(Game Control 01)
- - $(Game Control 02)
- - $(Game Control 03)
+ - w/up key (go up)
+ - a/left key (go left)
+ - s/down key (go down)
+ - d/right key (go right)
+ - enter key (change to level)
+ - escape key (close)
 
 ### Screenshots
 
@@ -25,21 +31,21 @@ _TODO: Show your game to the world, animated GIFs recommended!._
 
 ### Developers
 
- - $(Aleix Domenech) - $(Role/Tasks Developed)
- - $(Raúl Romero) - $(Role/Tasks Developed)
- - $(Pol Anguita) - $(Role/Tasks Developed)
- - $(Oriol Mallafré) - $(Role/Tasks Developed)
+ - Aleix Domenech – Programmer & Artist  
+   (distance counter, move enemies, player detection, state machine and player chase)
 
-### Links
+ - Raul Romero – Programmer  
+   (Timer, distance counter, move enemies, player detection, scene enter logic, state machine and player chase)
 
- - YouTube Gameplay: $(YouTube Link)
- - itch.io Release: $(itch.io Game Page)
- - Steam Release: $(Steam Game Page)
+ - Pol Anguita – Programmer  
+   (High score, move enemies and state machine)
+
+ - Oriol Mallafre – Tester  
+   (move enemies, high score, change escenary to ending, bug detection and error reporting to the development team)
 
 ### License
 
 This game sources are licensed under MIT license. Check [LICENSE](LICENSE) for further details.
 
-$(Additional Licenses)
 
-*Copyright (c) $(2026) $(Developers Names)*
+*Copyright (c) 2026 Aleix Domenech, Raul Romero, Pol Anguita, Oriol Mallafre*
