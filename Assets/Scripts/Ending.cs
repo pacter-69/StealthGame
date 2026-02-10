@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Ending : MonoBehaviour
 {
     public TimeText timeText;
-
+    public int dieForEnemies = 0;
     private void GuardarDatos()
     {
         int tiempo = 0;
@@ -35,13 +35,38 @@ public class Ending : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Finish"))
+        {
+            Debug.Log("Finish reached");
+            dieForEnemies = 0;
+            PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
+            PlayerPrefs.Save();
             CargarFinal();
+        }
+            
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            dieForEnemies = 1;
+            PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("Ending");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Finish"))
+        if (other.CompareTag("Finish")) { 
+            dieForEnemies = 0;
+            PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
+            PlayerPrefs.Save();
             CargarFinal();
+        }
+        if (other.CompareTag("Enemy"))
+        {
+            dieForEnemies = 1;
+            PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("Ending");
+        }
     }
 
     private void OnApplicationQuit()
