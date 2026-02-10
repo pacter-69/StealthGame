@@ -9,7 +9,8 @@ public class PatrolBehaviour : StateMachineBehaviour
     private float timer;
     private Transform player;
     private Vector2 targetPos;
-    private Vector2 startPos;
+
+    private float targetFactor;
 
     [SerializeField]
     private bool playerClose;
@@ -25,8 +26,7 @@ public class PatrolBehaviour : StateMachineBehaviour
         timer = 0.0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        //startPos = new Vector2(animator.transform.position.x, animator.transform.position.y);
-        //targetPos = new Vector2(startPos.x + Random.Range(-1.0f, 1.0f) * 4, startPos.y + Random.Range(-1.0f, 1.0f) * 4);
+        targetPos = new Vector2(animator.transform.right.x, animator.transform.position.y);
     }
 
     // OnStateUpdate is called on each Update frame between
@@ -51,8 +51,15 @@ public class PatrolBehaviour : StateMachineBehaviour
         animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
         animator.SetBool("IsPatroling", !timeUp);
 
-        // Move
-        //animator.transform.position = Vector2.Lerp(startPos, targetPos, timer / stayTime);
+        //animator.transform.position = Vector2.Lerp(animator.transform.position, targetPos, timer / stayTime);
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        playerClose = false;
+        playerAvaliable = false;
+        playerOnAngle = false;
+        targetFactor *= -1;
     }
 
     private bool IsTimeUp()
@@ -75,7 +82,7 @@ public class PatrolBehaviour : StateMachineBehaviour
     private bool IsPlayerAvaliable(Transform transform)
     {
         Vector2 vectorToPlayer = player.position - transform.position;
-        string playerHit = Physics2D.Raycast(transform.position, vectorToPlayer, vectorToPlayer.magnitude).collider.gameObject.tag;
-        return playerHit.Equals("Player");
+        GameObject playerHit = Physics2D.Raycast(transform.position, vectorToPlayer).collider.gameObject;
+        return playerHit.CompareTag("Player");
     }
 }

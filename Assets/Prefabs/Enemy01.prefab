@@ -64,7 +64,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &9064273919618734252
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d8651717e56e949801768444cc924f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  visionRange: 4
-  visionAngle: 20
+  visionRange: 5
+  visionAngle: 35
 --- !u!1 &2523524360773735383
 GameObject:
   m_ObjectHideFlags: 0

@@ -231,9 +231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9815b42c000354ba6ccfcf4e9e619b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolBehaviour
-  stayTime: 0
-  visionRange: 4
-  visionAngle: 20
+  stayTime: 1
+  visionRange: 5
+  visionAngle: 35
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
@@ -249,9 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085792c6b3477074883d8ce178080629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IdleBehaviour
-  stayTime: 0
-  visionRange: 4
-  visionAngle: 20
+  stayTime: 1
+  visionRange: 5
+  visionAngle: 35
+  angleToRotate: 180
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
@@ -315,11 +316,11 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.14353013
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.9821569
   m_HasExitTime: 1
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1

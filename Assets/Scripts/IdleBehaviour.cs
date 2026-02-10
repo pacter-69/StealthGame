@@ -6,6 +6,8 @@ public class IdleBehaviour : StateMachineBehaviour
     public float visionRange;
     public float visionAngle;
 
+    public float angleToRotate;
+
     private float timer;
     private Transform player;
 
@@ -41,9 +43,13 @@ public class IdleBehaviour : StateMachineBehaviour
 
         animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
         animator.SetBool("IsPatroling", timeUp);
+    }
 
-        // Move
-        //animator.transform.position = Vector2.Lerp(startPos, targetPos, timer / stayTime);
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        playerClose = false;
+        playerAvaliable = false;
+        playerOnAngle = false;
     }
 
     private bool IsTimeUp()
@@ -67,7 +73,6 @@ public class IdleBehaviour : StateMachineBehaviour
     {
         Vector2 vectorToPlayer = player.position - transform.position;
         GameObject playerHit = Physics2D.Raycast(transform.position, vectorToPlayer).collider.gameObject;
-        Debug.Log(playerHit.name);
         return playerHit.CompareTag("Player");
     }
 }
