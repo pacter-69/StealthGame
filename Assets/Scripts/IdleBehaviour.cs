@@ -7,6 +7,9 @@ public class IdleBehaviour : StateMachineBehaviour
     public float visionAngle;
 
     public float angleToRotate;
+    public float rotateDuration;
+
+    private Quaternion startRotation, targetRotation;
 
     private float timer;
     private Transform player;
@@ -22,11 +25,15 @@ public class IdleBehaviour : StateMachineBehaviour
     {
         timer = 0.0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        startRotation = animator.transform.rotation;
+        targetRotation = startRotation * Quaternion.Euler(0, 0, -180f);
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // Check triggers
+        float lerpFactor = Mathf.Clamp01(timer / rotateDuration);
+
         playerClose = IsPlayerClose(animator.transform);
 
         if (playerClose)
@@ -38,6 +45,8 @@ public class IdleBehaviour : StateMachineBehaviour
                 playerAvaliable = IsPlayerAvaliable(animator.transform);
             }
         }
+
+        animator.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, lerpFactor);
 
         var timeUp = IsTimeUp();
 

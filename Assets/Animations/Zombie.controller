@@ -234,6 +234,7 @@ MonoBehaviour:
   stayTime: 1
   visionRange: 5
   visionAngle: 35
+  speed: 2
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
@@ -253,6 +254,7 @@ MonoBehaviour:
   visionRange: 5
   visionAngle: 35
   angleToRotate: 180
+  rotateDuration: 2
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
@@ -297,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7130b36134c5e84aa80baf53c04af12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
-  Speed: 2
-  VisionRange: 4
+  Speed: 3.5
+  VisionRange: 5
 --- !u!1101 &6722819255422229609
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

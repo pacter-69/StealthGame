@@ -8,9 +8,8 @@ public class PatrolBehaviour : StateMachineBehaviour
 
     private float timer;
     private Transform player;
-    private Vector2 targetPos;
 
-    private float targetFactor;
+    public float speed;
 
     [SerializeField]
     private bool playerClose;
@@ -19,21 +18,14 @@ public class PatrolBehaviour : StateMachineBehaviour
     [SerializeField]
     private bool playerAvaliable;
 
-    // OnStateEnter is called when a transition starts and
-    // the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer = 0.0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        targetPos = new Vector2(animator.transform.right.x, animator.transform.position.y);
     }
 
-    // OnStateUpdate is called on each Update frame between
-    // OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // Check triggers
         playerClose = IsPlayerClose(animator.transform);
 
         if (playerClose)
@@ -51,7 +43,7 @@ public class PatrolBehaviour : StateMachineBehaviour
         animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
         animator.SetBool("IsPatroling", !timeUp);
 
-        //animator.transform.position = Vector2.Lerp(animator.transform.position, targetPos, timer / stayTime);
+        animator.transform.position += animator.transform.right.normalized * speed * Time.deltaTime;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -59,7 +51,6 @@ public class PatrolBehaviour : StateMachineBehaviour
         playerClose = false;
         playerAvaliable = false;
         playerOnAngle = false;
-        targetFactor *= -1;
     }
 
     private bool IsTimeUp()
