@@ -213,6 +213,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistanceText
   distance: 0
+--- !u!1 &257016135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 52584532751077343, guid: b2d82316fa4567041958a46d441d5db7,
+    type: 3}
+  m_PrefabInstance: {fileID: 342510803676401598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40531c8eea11a3d4c82429d4e7d31693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  currentTime: 0
 --- !u!1 &796000935
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +703,7 @@ GameObject:
   - component: {fileID: 1397701834}
   m_Layer: 0
   m_Name: spritesheet_tiles_236
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -745,7 +752,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397701833}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -845,6 +852,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 342510803676401598}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1701691625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257016135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3034ee0c87106bc42a71dd8917814408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ending
+  timeText: {fileID: 615651459}
+  distanceText: {fileID: 8979772}
 --- !u!1 &2084087561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1024,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 52584532751077343, guid: b2d82316fa4567041958a46d441d5db7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1701691625}
   m_SourcePrefab: {fileID: 100100000, guid: b2d82316fa4567041958a46d441d5db7, type: 3}
 --- !u!1001 &445789979621339445
 PrefabInstance:

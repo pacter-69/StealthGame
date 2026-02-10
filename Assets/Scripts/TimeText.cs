@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class TimeText : MonoBehaviour
 {
     private Text label;
+    public int currentTime;
 
     private void Awake()
     {
         label = GetComponent<Text>();
+        currentTime = 0;
     }
 
     private void OnDisable()
@@ -25,6 +27,7 @@ public class TimeText : MonoBehaviour
 
     private void UpdateTimeText(int tiempo)
     {
+        currentTime = tiempo;
         label.text = "tiempo: " + tiempo.ToString() + " seg.";
     }
 }
