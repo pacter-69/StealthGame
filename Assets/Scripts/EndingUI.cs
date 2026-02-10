@@ -13,11 +13,19 @@ public class EndingUI : MonoBehaviour
         int lastTime = PlayerPrefs.GetInt("LastTime", 0);
         int bestTime = PlayerPrefs.GetInt("BestTime", 0);
 
-        currentTimeText.text = "Tiempo: " + lastTime;
-        bestTimeText.text = "Mejor tiempo: " + bestTime;
+       
         if (dieForEnemies == 1)
         {
             dieForEnemiesText.text = "Has muerto por enemigos. Has perdido";
+            currentTimeText.text = "";
+            bestTimeText.text = "";
+        }
+        else
+        {
+            Debug.Log(dieForEnemies);
+            dieForEnemiesText.text = "Has llegado al final. ¡Felicidades!"; 
+            currentTimeText.text = "Tiempo: " + lastTime;
+            bestTimeText.text = "Mejor tiempo: " + bestTime;
         }
     }
 }

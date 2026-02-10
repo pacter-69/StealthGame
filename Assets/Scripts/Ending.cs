@@ -37,6 +37,9 @@ public class Ending : MonoBehaviour
         if (collision.collider.CompareTag("Finish"))
         {
             Debug.Log("Finish reached");
+            dieForEnemies = 0;
+            PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
+            PlayerPrefs.Save();
             CargarFinal();
         }
             
@@ -53,10 +56,14 @@ public class Ending : MonoBehaviour
     {
         if (other.CompareTag("Finish")) { 
             Debug.Log("Finish reached");
+            dieForEnemies = 0;
+            PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
+            PlayerPrefs.Save();
             CargarFinal();
         }
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("Muerte sangre uooo");
             dieForEnemies = 1;
             PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
             PlayerPrefs.Save();
