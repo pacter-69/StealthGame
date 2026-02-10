@@ -26,7 +26,6 @@ public class Ending : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-
     private void CargarFinal()
     {
         GuardarDatos();
@@ -43,5 +42,12 @@ public class Ending : MonoBehaviour
     {
         if (other.CompareTag("Finish"))
             CargarFinal();
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey("BestTime");
+        PlayerPrefs.DeleteKey("LastTime");
+        PlayerPrefs.Save();
     }
 }

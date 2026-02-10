@@ -11,7 +11,7 @@ public class EndingUI : MonoBehaviour
         int lastTime = PlayerPrefs.GetInt("LastTime", 0);
         int bestTime = PlayerPrefs.GetInt("BestTime", 0);
 
-        currentTimeText.text = "Tiempo: " + lastTime + " seg.";
-        bestTimeText.text = "Mejor tiempo: " + bestTime + " seg.";
+        currentTimeText.text = "Tiempo: " + lastTime;
+        bestTimeText.text = "Mejor tiempo: " + bestTime;
     }
 }

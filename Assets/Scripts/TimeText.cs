@@ -9,10 +9,21 @@ public class TimeText : MonoBehaviour
     private Text label;
     public int currentTime;
 
+    private static bool borradoAlArrancar;
+
     private void Awake()
     {
         label = GetComponent<Text>();
         currentTime = 0;
+
+        if (!borradoAlArrancar)
+        {
+            borradoAlArrancar = true;
+
+            PlayerPrefs.DeleteKey("BestTime");
+            PlayerPrefs.DeleteKey("LastTime");
+            PlayerPrefs.Save();
+        }
     }
 
     private void OnDisable()
