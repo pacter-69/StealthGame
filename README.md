@@ -38,7 +38,7 @@ _TODO: Show your game to the world, animated GIFs recommended!._
    (Timer, distance counter, move enemies, player detection, scene enter logic, state machine and player chase)
 
  - Pol Anguita – Programmer  
-   (High score, move enemies and state machine)
+   (High score, move enemies, state machine, ending scene and timer)
 
  - Oriol Mallafre – Tester & Programmer 
    (move enemies, high score, change escenary to ending, bug detection and error reporting to the development team)
