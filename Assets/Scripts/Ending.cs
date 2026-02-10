@@ -55,7 +55,6 @@ public class Ending : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Finish")) { 
-            Debug.Log("Finish reached");
             dieForEnemies = 0;
             PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
             PlayerPrefs.Save();
@@ -63,7 +62,6 @@ public class Ending : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Muerte sangre uooo");
             dieForEnemies = 1;
             PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
             PlayerPrefs.Save();
