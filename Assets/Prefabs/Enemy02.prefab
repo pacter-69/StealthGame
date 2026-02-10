@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9064273919618734252}
   - component: {fileID: 6279012902051936232}
   - component: {fileID: 2014618784930173735}
+  - component: {fileID: 3124741555045168335}
   m_Layer: 6
   m_Name: Enemy02
   m_TagString: Enemy
@@ -146,6 +147,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   visionRange: 7
   visionAngle: 15
+--- !u!114 &3124741555045168335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267569582029700575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0600892cf6eb7234fa907d39c2f98582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircleEnemyAngle
+  angle: 180
 --- !u!1 &2523524360773735383
 GameObject:
   m_ObjectHideFlags: 0
