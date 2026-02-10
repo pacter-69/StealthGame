@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChaseBehaviour : StateMachineBehaviour
 {
-    public float speed = 2;
+    public float speed;
     public float visionRange;
 
     private Transform player;
