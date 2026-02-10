@@ -45,7 +45,7 @@ public class Ending : MonoBehaviour
             dieForEnemies = 1;
             PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
             PlayerPrefs.Save();
-            CargarFinal();
+            SceneManager.LoadScene("Ending");
         }
     }
 
@@ -60,7 +60,7 @@ public class Ending : MonoBehaviour
             dieForEnemies = 1;
             PlayerPrefs.SetInt("DieForEnemies", dieForEnemies);
             PlayerPrefs.Save();
-            CargarFinal();
+            SceneManager.LoadScene("Ending");
         }
     }
 
