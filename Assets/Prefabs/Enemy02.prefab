@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   visionRange: 7
   visionAngle: 15
+  alarm: {fileID: 0}
 --- !u!114 &3124741555045168335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ GameObject:
   - component: {fileID: 7124893498094360892}
   - component: {fileID: 2957576521581476592}
   - component: {fileID: 5424256051626383886}
+  - component: {fileID: 7690762113681729863}
   m_Layer: 6
   m_Name: Alarm
   m_TagString: Untagged
@@ -406,6 +408,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 1.25
+--- !u!95 &7690762113681729863
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523524360773735383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 709cf4c9dd1192349957404b943a6e7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5184733042447229926
 GameObject:
   m_ObjectHideFlags: 0
