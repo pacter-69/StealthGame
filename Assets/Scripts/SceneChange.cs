@@ -22,4 +22,10 @@ public class SceneChange : MonoBehaviour
     {
         Application.Quit();
     }
+
+    private void Update()
+    {
+        GameObject sceneManager = GameObject.Find("SceneManager");
+        if (sceneManager != gameObject) Destroy(sceneManager);
+    }
 }
