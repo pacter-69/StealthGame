@@ -16,15 +16,15 @@ public class EndingUI : MonoBehaviour
        
         if (dieForEnemies == 1)
         {
-            dieForEnemiesText.text = "Has muerto por enemigos. Has perdido";
+            dieForEnemiesText.text = "Has sido atrapado...\n¡Has perdido!";
             currentTimeText.text = "";
             bestTimeText.text = "";
         }
         else
         {
             dieForEnemiesText.text = "Has llegado al final. ¡Felicidades!"; 
-            currentTimeText.text = "Tiempo: " + lastTime;
-            bestTimeText.text = "Mejor tiempo: " + bestTime;
+            currentTimeText.text = "Tu tiempo: " + lastTime + " segundos";
+            bestTimeText.text = "Mejor tiempo: " + bestTime + " segundos";
         }
     }
 }
