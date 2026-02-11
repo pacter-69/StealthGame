@@ -40,8 +40,8 @@ public class PatrolBehaviour : StateMachineBehaviour
 
         var timeUp = IsTimeUp();
 
-        animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
-        animator.SetBool("IsPatroling", !timeUp);
+        animator.SetBool("isChasing", playerClose && playerOnAngle && playerAvaliable);
+        animator.SetBool("isPatroling", !timeUp);
 
         animator.transform.position += animator.transform.right.normalized * speed * Time.deltaTime;
     }

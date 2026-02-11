@@ -15,7 +15,7 @@ public class ChaseBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         var playerClose = IsPlayerClose(animator.transform);
-        animator.SetBool("IsChasing", playerClose);
+        animator.SetBool("isChasing", playerClose);
 
         Vector2 dir = player.position - animator.transform.position;
         animator.transform.right = dir.normalized;

@@ -50,8 +50,8 @@ public class IdleBehaviour : StateMachineBehaviour
 
         var timeUp = IsTimeUp();
 
-        animator.SetBool("IsChasing", playerClose && playerOnAngle && playerAvaliable);
-        animator.SetBool("IsPatroling", timeUp);
+        animator.SetBool("isChasing", playerClose && playerOnAngle && playerAvaliable);
+        animator.SetBool("isPatroling", timeUp);
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
