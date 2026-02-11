@@ -163,7 +163,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Zombie
+  m_Name: Zombie03
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsPatroling
@@ -231,10 +231,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9815b42c000354ba6ccfcf4e9e619b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolBehaviour
-  stayTime: 1
+  stayTime: 1.5
   visionRange: 5
   visionAngle: 35
-  speed: 2
+  speed: 6
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
