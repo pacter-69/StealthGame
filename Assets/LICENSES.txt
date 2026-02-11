@@ -47,3 +47,8 @@ Topdown (Shooter) Pack
 	Follow on Twitter for updates:
 	@KenneyWings
 ###############################################################################
+
+Deegrees Vision Sprites by Aleix Doménech Corbella is marked CC0 1.0 Universal.
+To view a copy of this mark, visit https://creativecommons.org/publicdomain/zero/1.0/
+
+###############################################################################
