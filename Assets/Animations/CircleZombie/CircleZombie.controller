@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078d5b098f81227459f68e6d4593f8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  stayTime: 3
+  stayTime: 4
   visionRange: 7
   visionAngle: 15
-  rotateDuration: 6
+  rotateDuration: 4
+  angle: 180
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
@@ -71,7 +72,8 @@ MonoBehaviour:
   stayTime: 5
   visionRange: 7
   visionAngle: 15
-  speed: 4
+  vectorToRotate: {x: 0, y: 0, z: 0}
+  speed: 2.5
   playerClose: 0
   playerOnAngle: 0
   playerAvaliable: 0
@@ -124,10 +126,10 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 300, y: -110, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 2179547183441959685}
+  m_DefaultState: {fileID: -1480647365417837089}
 --- !u!1102 &-1480647365417837089
 AnimatorState:
   serializedVersion: 6
