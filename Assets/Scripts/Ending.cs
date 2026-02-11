@@ -5,6 +5,7 @@ public class Ending : MonoBehaviour
 {
     public TimeText timeText;
     public int dieForEnemies = 0;
+
     private void GuardarDatos()
     {
         int tiempo = 0;
@@ -60,6 +61,7 @@ public class Ending : MonoBehaviour
             PlayerPrefs.Save();
             CargarFinal();
         }
+
         if (other.CompareTag("Enemy"))
         {
             dieForEnemies = 1;
