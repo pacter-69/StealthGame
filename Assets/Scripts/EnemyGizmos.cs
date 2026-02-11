@@ -6,9 +6,16 @@ public class EnemyGizmos : MonoBehaviour
     public float visionRange;
     public float visionAngle;
 
+    public GameObject alarm;
+
     private void Start()
     {
         player = GameObject.Find("Player");   
+    }
+
+    private void Update()
+    {
+        alarm.SetActive(GetComponent<Animator>().GetBool("isChasing"));
     }
 
     private void OnDrawGizmos()

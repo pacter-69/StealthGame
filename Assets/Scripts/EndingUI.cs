@@ -13,7 +13,6 @@ public class EndingUI : MonoBehaviour
         int lastTime = PlayerPrefs.GetInt("LastTime", 0);
         int bestTime = PlayerPrefs.GetInt("BestTime", 0);
 
-       
         if (dieForEnemies == 1)
         {
             dieForEnemiesText.text = "Has sido atrapado...\n¡Has perdido!";
