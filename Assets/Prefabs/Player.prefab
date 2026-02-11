@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1488233318776146523}
   - component: {fileID: 319981451186505338}
   - component: {fileID: 2788359585180207502}
+  - component: {fileID: 4245208723607696806}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -240,3 +241,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0cfbed7e686d26439afd7c93d7f2bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &4245208723607696806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52584532751077343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3034ee0c87106bc42a71dd8917814408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ending
+  timeText: {fileID: 0}
+  dieForEnemies: 0

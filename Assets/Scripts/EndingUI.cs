@@ -22,7 +22,6 @@ public class EndingUI : MonoBehaviour
         }
         else
         {
-            Debug.Log(dieForEnemies);
             dieForEnemiesText.text = "Has llegado al final. ¡Felicidades!"; 
             currentTimeText.text = "Tiempo: " + lastTime;
             bestTimeText.text = "Mejor tiempo: " + bestTime;
